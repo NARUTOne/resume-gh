@@ -6,6 +6,8 @@
 
 const path = require('path');
 
+const ghPath = "https://narutone.github.io/resume-gh/";
+
 module.exports = {
   dev: {
     assetsPublicPath: '/', // 资源path
@@ -15,7 +17,7 @@ module.exports = {
   },
   build: {
     buildPath: path.resolve(__dirname, '../dist'), // 打包文件path 
-    assetsPublicPath: '/', // 资源path
+    assetsPublicPath: ghPath, // 资源path
     assetsSubDirectory: 'static', // 项目资源目录
     productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production

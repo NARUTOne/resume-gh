@@ -28,14 +28,14 @@ const createLintingRule = () => ({
 var baseConfig = {
   target: 'web', 
   entry: {
-		app: [path.resolve(__dirname, '../src/index.js')]
+    app: [path.resolve(__dirname, '../src/index.js')]
   },
   output: {
     path: path.resolve(__dirname, PATHS.build.buildPath),
-		publicPath: process.env.NODE_ENV === 'production'
+    publicPath: process.env.NODE_ENV === 'production'
       ? PATHS.build.assetsPublicPath
       : PATHS.dev.assetsPublicPath,  // 外部资源 url
-		chunkFilename: pnamePath +'static/js/[id].[chunkhash:8].js' // chunk生成的文件名,按需加载
+    chunkFilename: pnamePath +'static/js/[id].[chunkhash:8].js' // chunk生成的文件名,按需加载
   },
   module: {
     rules: [
@@ -87,7 +87,7 @@ var baseConfig = {
     ]
   },
   resolve: {
-		extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       static: path.resolve(__dirname, '../static'),
@@ -100,11 +100,11 @@ var baseConfig = {
     // new CleanWebpackPlugin(['dist']), // 清除 测试dist
     new webpack.NoEmitOnErrorsPlugin(), // 2.x以上；编译时出错，跳过，编译后保错
     new ExtractTextPlugin({ // 提取出css模块，到公共文件.css
-			filename: pnamePath +'static/css/[name].[contenthash].css',
-			disable: false,
-			allChunks: true
-		})
-	],
+      filename: pnamePath +'static/css/[name].[contenthash].css',
+      disable: false,
+      allChunks: true
+    })
+  ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).
