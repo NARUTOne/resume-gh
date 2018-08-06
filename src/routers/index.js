@@ -15,16 +15,17 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const LOGIN_PATH = '/login';
-  const TO_PATH = to.path;
+  // const LOGIN_PATH = '/login';
+  // const TO_PATH = to.path;
   // console.log(auth);
 
-  if(!auth.isLoginIn()) {
-    TO_PATH !== LOGIN_PATH ? next(LOGIN_PATH) : next();
-  }
-  else {
-    next();
-  }
+  // if(!auth.isLoginIn()) {
+  //   TO_PATH !== LOGIN_PATH ? next(LOGIN_PATH) : next();
+  // }
+  // else {
+  //   next();
+  // }
+  next();
 });
 
 export default router;
